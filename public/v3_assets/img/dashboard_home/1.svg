@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="31.832" height="31.832" viewBox="0 0 31.832 31.832">
+  <g id="Group_281" data-name="Group 281" transform="translate(-457.1 -996.051)">
+    <g id="phone_iphone_black_24dp" transform="translate(457.1 996.051)">
+      <path id="Path_216" data-name="Path 216" d="M0,0H31.832V31.832H0Z" fill="none"/>
+      <path id="Path_217" data-name="Path 217" d="M18.927,1H8.316A3.317,3.317,0,0,0,5,4.316V26.864a3.317,3.317,0,0,0,3.316,3.316H18.927a3.317,3.317,0,0,0,3.316-3.316V4.316A3.317,3.317,0,0,0,18.927,1ZM13.621,28.853a1.99,1.99,0,1,1,1.99-1.99A1.987,1.987,0,0,1,13.621,28.853Zm5.969-5.305H7.653V4.979H19.59Z" transform="translate(1.632 0.326)" fill="#fff"/>
+    </g>
+    <g id="task_alt_black_24dp" transform="translate(467.711 1005.334)">
+      <rect id="Rectangle_104" data-name="Rectangle 104" width="9.284" height="9.284" fill="none"/>
+      <path id="Path_218" data-name="Path 218" d="M9.181,3.15l-4.1,4.132L3.562,5.748l.506-.51L5.084,6.262,8.675,2.644ZM8.388,4.974a2.925,2.925,0,0,1,.075.644A2.873,2.873,0,1,1,5.591,2.724a2.829,2.829,0,0,1,1.537.452l.517-.521A3.537,3.537,0,0,0,5.591,2,3.618,3.618,0,1,0,9.181,5.618a3.652,3.652,0,0,0-.215-1.226Z" transform="translate(-0.803 -0.803)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

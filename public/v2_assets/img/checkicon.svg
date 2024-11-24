@@ -1,0 +1,20 @@
+<svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 253 186" width="253" height="186">
+	<title>Group 932-svg</title>
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: none;stroke: #4cb429;stroke-linecap:round;stroke-linejoin:round;stroke-width: 12 } 
+		.txt1 { font-size: 30px;fill: #748dac;font-weight: 600;font-family: "Cairo-SemiBold", "Cairo" } 
+	</style>
+	<g id="Group_932">
+		<g id="Group_251">
+			<path id="Path_1314" class="shp0" d="M208.33 78.9L208.33 86.27C208.23 121.66 184.88 152.77 150.92 162.74C116.97 172.72 80.5 159.18 61.28 129.47C42.06 99.76 44.65 60.95 67.66 34.07C90.67 7.18 128.62 -1.37 160.94 13.03" />
+			<path id="Path_1315" class="shp0" d="M208.33 22.98L130.33 107.21L106.93 81.96" />
+		</g>
+		<g id="Group_252">
+			<text id="تم تأكيد رقم الهاتف" style="transform: matrix(1,0,0,1,0,263.85)" >
+				<tspan x="81.63" y="0" class="txt1">الهاتف
+</tspan>
+			</text>
+		</g>
+	</g>
+</svg>

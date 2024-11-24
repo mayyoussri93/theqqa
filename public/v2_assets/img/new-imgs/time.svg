@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="766" height="561" viewBox="0 0 766 561">
+  <g id="time" transform="translate(-2082 -697)">
+    <g id="clock" transform="translate(2209 722)">
+      <g id="Group_4" data-name="Group 4">
+        <g id="Group_3" data-name="Group 3">
+          <path id="Path_5" data-name="Path 5" d="M347.216,301.211l-71.387-53.54V138.609a19.83,19.83,0,0,0-39.66,0V257.587a19.789,19.789,0,0,0,7.932,15.864l79.318,59.489a19.831,19.831,0,0,0,23.8-31.729Z" fill="#e8e7c9"/>
+        </g>
+      </g>
+      <g id="Group_6" data-name="Group 6">
+        <g id="Group_5" data-name="Group 5">
+          <path id="Path_6" data-name="Path 6" d="M256,0C114.833,0,0,114.833,0,256S114.833,512,256,512,512,397.167,512,256,397.167,0,256,0Zm0,472.341C136.725,472.341,39.659,375.275,39.659,256S136.725,39.659,256,39.659c119.295,0,216.341,97.066,216.341,216.341S375.275,472.341,256,472.341Z" fill="#e8e7c9"/>
+        </g>
+      </g>
+    </g>
+    <g id="Rectangle_4" data-name="Rectangle 4" transform="translate(2082 697)" fill="none" stroke="rgba(112,112,112,0)" stroke-width="1">
+      <rect width="766" height="561" stroke="none"/>
+      <rect x="0.5" y="0.5" width="765" height="560" fill="none"/>
+    </g>
+  </g>
+</svg>

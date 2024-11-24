@@ -1,0 +1,296 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* 
+
+	Template Name: Stetho - Hotel Multipage Clean Bootstrap HTML5 Website Template
+	Author: Rainbow Design
+	Author URL: http://rainbowdesign.in/
+	
+*/
+
+/* Medium Devices, Desktops */
+@media (max-width: 1199px) {
+	.container-width{
+		width: 90%;
+	}
+	.dropdown-list.hover-dropdown{
+		top: 0px;
+	}
+	.header-upper-bar .container-fluid{
+		width: 90%;
+	}
+	.dropdown-btn.services:hover .hover-dropdown{
+		max-height: 0;
+		overflow: hidden;
+		transition: all 0.5s ease-out;
+	}
+	.dropdown-btn.services:hover .hover-dropdown.show{
+		transition: all 0.5s ease-out;
+		max-height: 250px;
+	}
+.header-navigation .navbar-nav .nav-link {
+	padding: 16px 11px;
+	font-size: 16px;
+}
+.services i{
+	transform: rotate(90deg);
+    font-size: 20px;
+    top: 20px;
+    position: absolute;
+}
+.slider .carousel-item img {
+	height: 500px;
+}
+}
+@media (max-width: 992px) {
+.header-call-us i, .header-call-us ul li a {
+	font-size: 12px;
+}
+
+}
+@media (max-width: 991px) {
+	p {
+		line-height: 22px;
+		font-size: 14px;
+	}
+
+.logo {
+	text-align: center;
+	margin-bottom: 0px;
+	width: 60px;
+}
+.carousel {
+    position: relative;
+    margin-bottom: 124px;
+}
+.logo .navbar-brand {
+	margin-right: 0px;
+}
+.header-upper-bar {
+	padding: 6px 0px;
+}
+.header-navigation .navbar-collapse {
+    position: fixed;
+    background-color: #fff;
+    z-index: 9;
+    width: 80%;
+    right: auto;
+    top: 0px;
+    display: flex;
+    left: -100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: start;
+    box-shadow: 0px 0px 3px 3px #d3d3d3ab;
+}
+
+.header-navigation .navbar-collapse ul{
+	padding: 10px 15px;
+	order: 2;
+}
+
+.navbar-nav {
+	flex-direction: column!important;
+}
+.header nav{
+	position: static;
+}
+.logo img{
+	width: 60px;
+}
+
+.header-navigation .navbar-collapse .navbar-nav li {
+	width: 100%;
+}
+.close-menu-btn{
+	display: block;
+	order:- 1;
+}
+.nav-wrapper-links{
+	order:1;
+    width: 95%;
+    text-align: center;
+    /* justify-content: center; */
+    border-bottom: 1px solid #00000029;
+    padding-bottom: 10px;
+}
+.gj-datepicker-bootstrap [role="right-icon"] button {
+	height: 36px;
+}
+.slider .carousel-control-next, .slider .carousel-control-prev {
+	display: none;
+}
+
+.form-style-1 input[type="text"], .form-style-1 input[type="email"], .form-style-1 input[type="password"], .form-style-1 select {
+	height: 36px;
+}
+.carousel-fade .carousel-item img {
+	height: 400px;
+}
+.app-img img {
+	position: relative;
+}
+
+.header-lover {
+	padding: 8px 0;
+	
+	padding-bottom: 25px;
+}
+
+.phone {
+    width: 54px;}
+	.header-call-us ul li .text-holder {
+		padding-right: 63px;}
+h2 {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+}
+/* Small Devices, Tablets */
+@media (max-width: 767px) {
+	.header-upper-bar .navbar-brand img{
+		width: 100%;
+		padding: 0px;
+		margin: 0px;
+	}
+	.wrapper-text-banner{
+		width: 100%;
+		text-align: center;
+	}
+	.header-navigation{
+		border: none;
+	}
+	.slider{
+		margin-top:0px;
+		margin-bottom: 40px;
+		display: block!important;
+	}
+	.img-banner{
+		width: 65%;
+		margin: auto;
+		margin-top: 20px;
+	}
+	.logo{
+		width: 100px;
+	}
+	.layer-dots{
+		display: none;
+	}
+	.wrapper-cross-text{
+		text-align: center;
+		padding-right: 0px;
+	}
+	.grey-title{
+		font-size: 24px;
+	}
+	.wrapper-cross-text h2{
+		font-size: 30px;
+	}
+.wrapper-col{
+
+    margin-bottom: 40px;
+}
+	.wrapper-cross-img{
+		text-align: center;
+	}
+	.wrapper-cross-img img{
+		width: 80%;
+	}
+	.img-banner::before{
+		top:10px;
+		left: -10px;
+	}
+	.side-banner-dots{
+		left: 6%;
+		top: 0px;
+	}
+	.wrapper-customer .cross-rounded{
+		margin-bottom: 25px;
+		padding-bottom: 25px;
+	}
+	.widget-title {
+		font-size: 25px;
+		position: relative;
+		padding-bottom: 0;
+		margin-bottom: 5px;
+		color: #135c50;
+		letter-spacing: -1px;
+	}
+	.header-call-us ul li {
+		width: 100%;
+		margin-right: 0;
+	}
+	h2 {
+		font-size: 26px;
+		font-weight: 700;
+	}
+	.header-lover {
+		padding: 8px 0;
+		
+		padding-bottom: 25px;
+	}
+.header-call-us i, .header-call-us ul li a {
+	font-size: 12px;
+}
+.slider {
+	/* background-image: url(../img/slider/slider-1.jpg);
+	background-repeat: no-repeat; */
+	background-position: top center;
+	background-size: cover;
+}
+.slider .slide {
+	/* display: none; */
+}
+.search-area {
+	position: relative;
+	padding: 30px 0px;
+}
+
+.list-box .list-box-carousel {
+	width: 100%;
+}
+
+.header-call-us {
+	text-align: right;
+}
+
+.header-call-us ul li {
+	margin-bottom: 20px;
+}
+.header-call-us ul li:last-child {
+	margin-bottom: 0px;
+}
+
+}
+
+/* Extra Small Devices, Phones */
+@media (max-width: 575px) {
+
+.header-call-us {
+	float: right;
+}
+
+.header-call-us ul li a, .header-call-us i {
+	font-size: 14px;
+}
+.header-call-us ul li .iocn-holder i {
+	font-size: 30px;
+}
+
+.review-item {
+	display: inline-block;
+}
+.review-item img {
+	margin-bottom: 8px;
+}
+.review-item .media-body {
+	width: 100%;
+}
+.forgot-password {
+	text-align: left !important;
+	margin-bottom: 15px;
+}
+
+}
