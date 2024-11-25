@@ -4,18 +4,8 @@ namespace App\Http\Controllers\Admin\SettingManagement;
 
 use App\Http\Controllers\Controller;
 use App\Models\ContactUs;
-use App\Models\Contract;
 use App\Models\Customer;
-use App\Http\Controllers\SearchController;
-use App\Models\CommonTopic;
-use App\Models\Cv;
-use App\Models\CvPreviousSponsor;
-use App\Models\FrequentlyQuestioned;
-use App\Models\Note;
-use App\Models\Office;
-use App\Models\RecruitmentForm;
-use App\Models\Reservation;
-use App\Models\ReservationSponsor;
+
 use App\Models\Staff;
 use App\Utility\NotificationUtility;
 use Carbon\Carbon;
@@ -25,7 +15,6 @@ use Illuminate\Support\Facades\Cache;
 use Session;
 use Auth;
 use Hash;
-use App\Category;
 
 use App\Models\Brand;
 use App\Product;
@@ -73,6 +62,7 @@ class HomeController extends Controller
      */
     public function admin_dashboard(Request $request)
     {
+        return redirect()->route('website.main');
         $date=$request->date;
         $minutes = \Carbon\Carbon::now()->addMinutes(60);
         $start = \Illuminate\Support\Carbon::now()->subYear()->format('d-m-Y');

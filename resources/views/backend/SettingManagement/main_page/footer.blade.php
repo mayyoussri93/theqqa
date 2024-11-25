@@ -6,27 +6,27 @@
                     @csrf
                     <div class="card-body">
                         <h4 class="card-title text-start">{{translate('البيانات')}}</h4>
-                        <div class="mb-3 row">
-                            <label for="fname" class="col-sm-3 text-end control-label col-form-label">{{translate('صورة الشريط السفلى')}}</label>
-                            <div class="col-sm-9">
-                                <div class=" input-group " data-toggle="aizuploader" data-type="image">
-                                    <div class="input-group-prepend">
-                                        <div class="input-group-text bg-soft-secondary font-weight-medium">{{ translate('Browse') }}</div>
-                                    </div>
-                                    <div class="form-control file-amount">{{translate('اختار الملف')}}</div>
-                                    <input type="hidden" name="types[]" value="footer_logo">
-                                    <input type="hidden" name="footer_logo" class="selected-files"
-                                           value="{{ get_setting('footer_logo') }}">
-                                </div>
-                                <div class="file-preview"></div>
-                                <div class="valid-feedback">
-                                    {{translate("برجاء ادخال الصورة")}}
+{{--                        <div class="mb-3 row">--}}
+{{--                            <label for="fname" class="col-sm-3 text-end control-label col-form-label">{{translate('صورة الشريط السفلى')}}</label>--}}
+{{--                            <div class="col-sm-9">--}}
+{{--                                <div class=" input-group " data-toggle="aizuploader" data-type="image">--}}
+{{--                                    <div class="input-group-prepend">--}}
+{{--                                        <div class="input-group-text bg-soft-secondary font-weight-medium">{{ translate('Browse') }}</div>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="form-control file-amount">{{translate('اختار الملف')}}</div>--}}
+{{--                                    <input type="hidden" name="types[]" value="footer_logo">--}}
+{{--                                    <input type="hidden" name="footer_logo" class="selected-files"--}}
+{{--                                           value="{{ get_setting('footer_logo') }}">--}}
+{{--                                </div>--}}
+{{--                                <div class="file-preview"></div>--}}
+{{--                                <div class="valid-feedback">--}}
+{{--                                    {{translate("برجاء ادخال الصورة")}}--}}
 
-                                </div>
-                            </div>
-                        </div>
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
                         <div class="mb-3 row">
-                            <label for="lname" class="col-sm-3 text-end control-label col-form-label">{{translate('وصف الشريط السفلى')}}</label>
+                            <label for="lname" class="col-sm-3 text-end control-label col-form-label">{{translate('وصف تواصل معنا')}}</label>
                             <div class="col-sm-9">
                                 <input type="hidden" name="types[]" value="title_about_us_description">
                                 <textarea name="title_about_us_description" class="form-control"
@@ -37,45 +37,18 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="mb-3 row">
-                            <label for="email1" class="col-sm-3 text-end control-label col-form-label">{{ translate('رقم الشكاوى') }}</label>
-                            <div class="col-sm-9">
-                                <input type="hidden" name="types[]" value="contact_phone">
-                                <input type="text" class="form-control"
-                                       placeholder="{{ translate('رقم الشكاوى') }}" name="contact_phone"
-                                       value="{{ get_setting('contact_phone') }}">
-                            </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="cono1" class="col-sm-3 text-end control-label col-form-label">{{ translate('رقم المبيعات 1') }}</label>
+                            <label for="email1" class="col-sm-3 text-end control-label col-form-label">{{ translate('رقم التواصل معنا') }}</label>
                             <div class="col-sm-9">
                                 <input type="hidden" name="types[]" value="contact_phone_1">
                                 <input type="text" class="form-control"
-                                       placeholder="{{ translate('رقم المبيعات 1') }}"
+                                       placeholder="{{ translate('رقم التواصل معنا') }}"
                                        name="contact_phone_1"
                                        value="{{ get_setting('contact_phone_1') }}">
                             </div>
                         </div>
-                        <div class="mb-3 row">
-                            <label for="email1" class="col-sm-3 text-end control-label col-form-label">{{ translate('رقم المبيعات 2') }}</label>
-                            <div class="col-sm-9">
-                                <input type="hidden" name="types[]" value="contact_phone_2">
-                                <input type="text" class="form-control"
-                                       placeholder="{{ translate('رقم المبيعات 2') }}"
-                                       name="contact_phone_2"
-                                       value="{{ get_setting('contact_phone_2') }}">
-                            </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="cono1" class="col-sm-3 text-end control-label col-form-label">{{ translate('التواصل عبر الواتس') }}</label>
-                            <div class="col-sm-9">
-                                <input type="hidden" name="types[]" value="contact_whats_2">
-                                <input type="text" class="form-control"
-                                       placeholder="{{ translate('التواصل عبر الواتس') }}"
-                                       name="contact_whats_2"
-                                       value="{{ get_setting('contact_whats_2') }}">
-                            </div>
-                        </div>
+
                         <div class="mb-3 row">
                             <label for="cono1" class="col-sm-3 text-end control-label col-form-label">{{ translate('التواصل عبر الهاتف') }}</label>
                             <div class="col-sm-9">
@@ -246,18 +219,7 @@
                                        name="twitter_link" value="{{ get_setting('twitter_link')}}">
                             </div>
                         </div>
-                        <div class="mb-3 row">
-                            <label for="com1" class="col-sm-3 text-end control-label col-form-label">
-                                <span class="input-group-text"><i class="mdi mdi-instagram"></i></span>
 
-                            </label>
-                            <div class="col-sm-9">
-                                <input type="hidden" name="types[]" value="instagram_link">
-                                <input type="text" class="form-control" placeholder="http://"
-                                       name="instagram_link"
-                                       value="{{ get_setting('instagram_link')}}">
-                            </div>
-                        </div>
                         <div class="mb-3 row">
                             <label for="com1" class="col-sm-3 text-end control-label col-form-label">
                                    <span class="input-group-text"><i
@@ -304,48 +266,8 @@
                     </div>
                     <hr>
                     <div class="card-body">
-                        <h4 class="card-title text-start">{{translate('ايقونات الموقع')}}</h4>
-                        <div class="mb-3 row">
-                            <label for="com1" class="col-sm-3 text-end control-label col-form-label">
-                                {{ translate('رابطة معروف') }}
-                            </label>
-                            <div class="col-sm-9">
-                                <input type="hidden" name="types[]" value="ma3rof_link">
-                                <input type="text" class="form-control" placeholder="http://"
-                                       name="ma3rof_link" value="{{ get_setting('ma3rof_link') }}">
-                            </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="com1" class="col-sm-3 text-end control-label col-form-label">
-                                {{ translate('رابطة مساند') }}
-                            </label>
-                            <div class="col-sm-9">
-                                <input type="hidden" name="types[]" value="musaned_link">
-                                <input type="text" class="form-control" placeholder="http://"
-                                       name="musaned_link"
-                                       value="{{ get_setting('musaned_link') }}">
-                            </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="com1" class="col-sm-3 text-end control-label col-form-label">
-                                {{ translate('رقم التسلسلى وزارة التجارة') }}
-                            </label>
-                            <div class="col-sm-9">
-                                <input type="hidden" name="types[]" value="ministry_commerce_num">
-                                <input type="text" class="form-control" name="ministry_commerce_num"
-                                       value="{{ get_setting('ministry_commerce_num') }}">
-                            </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="com1" class="col-sm-3 text-end control-label col-form-label">
-                                {{ translate('رقم السلسلى وزارة الموارد البشرية') }}
-                            </label>
-                            <div class="col-sm-9">
-                                <input type="hidden" name="types[]" value="ministry_human_num">
-                                <input type="text" class="form-control" name="ministry_human_num"
-                                       value="{{ get_setting('ministry_human_num') }}">
-                            </div>
-                        </div>
+                        <h4 class="card-title text-start">{{translate('ضع فريم الموقع من جوجل ماب')}}</h4>
+
                         <div class="mb-3 row">
                             <label for="com1" class="col-sm-3 text-end control-label col-form-label">
                                 {{ translate('ضع فريم الموقع من جوجل ماب') }}

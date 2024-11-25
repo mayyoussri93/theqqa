@@ -92,20 +92,11 @@ class  ContactUsController extends Controller
                                                         </button>
                                                         <div class="dropdown-menu">';
 
-                        if (Auth::user()->user_type == 'admin' || in_array('15', json_decode(Auth::user()->staff->role->permissions))) {
                             $actions .= '<a href="javascript:void(0)" class="dropdown-item delete "  data-href="' . route('contact_us.destroy', $row->id) . '">' . translate('مسح') . '</a>';
-                        }
+
                         $mass=$row->massage;
                         $actions .= ' <a href="javascript:void(0)" class="dropdown-item show_contact_us_details " data-msg="'.$mass.'" >' . translate('نص الرسالة') . '</a>';
-                        if (Auth::user()->user_type == 'admin' || in_array('14', json_decode(Auth::user()->staff->role->permissions))) {
-                            $actions .= '<a href="javascript:void(0)" class="dropdown-item reply_contact_us " data-name="'. $row->name.'" data-phone="'. $row->phone.'"  >' . translate('الرد على العميل') . '</a>';
 
-                        }
-
-                        if (Auth::user()->user_type == 'admin' || in_array('13', json_decode(Auth::user()->staff->role->permissions))){
-                            if ($row->status == 0){
-                                $actions .= '<a href="javascript:void(0)" class="dropdown-item  " data-id="'. $row->id.'" data-status="'. $row->status.'" onclick="change_status('.$row->id.','.$row->status.')" >' . translate('تغير حالة التواصل') . '</a>';
-                            }}
                         $actions .= '  </div> </div>';
                         return $actions;
                     })

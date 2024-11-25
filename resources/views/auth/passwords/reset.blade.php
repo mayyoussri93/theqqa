@@ -1,12 +1,12 @@
 @extends('backend.layouts.layout')
 
 @section('content')
-    <div class="auth-wrapper d-flex no-block justify-content-center align-items-center" style="background:url({{static_asset('v4_assets/assets/images/Rectangle.png')}}) no-repeat center center;">
+    <div class="auth-wrapper d-flex no-block justify-content-center align-items-center" style="background:#ffffff no-repeat center center;">
         <div class="auth-box p-4 bg-white rounded">
             <div>
                 <div class="logo text-center">
-                    <span class="db"><img src="https://www.rawafdnajd.sa/public/uploads/all/JCPBAUETuvcBfdMAhh9jjkqAp9L5g08SCTscSLPO.svg" alt="logo" /></span>
-                    <h5 class="font-weight-medium mb-3 mt-1">{{translate('تغير كلمة المرور')}}</h5>
+                    <span class="db"><img src="{{static_asset('front_asset/img/logo_w.png')}}" alt="logo" style="width: auto; height: 200px" /></span>
+                    <h5 class="font-weight-medium mb-3 mt-1">{{translate('تسجيل الدخول')}}</h5>
                 </div>
                 <!-- Form -->
                 <div class="row mt-4">

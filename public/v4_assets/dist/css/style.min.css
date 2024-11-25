@@ -47382,7 +47382,7 @@ img {
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    border-left: 4px solid #E9A844;
+    border-left: 4px solid ##5f4092;
     border-bottom: 4px solid transparent;
     animation: rotation 0.5s linear infinite reverse;
 }

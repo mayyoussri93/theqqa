@@ -3,7 +3,6 @@
 @section('content')
     @php
 //        $header_logo = get_setting('header_logo');
-          $header_logo ="https://www.rawafdnajd.sa/public/uploads/all/JCPBAUETuvcBfdMAhh9jjkqAp9L5g08SCTscSLPO.svg";
     @endphp
 
     <div class="auth-wrapper d-flex no-block justify-content-center align-items-center" style="background:#ffffff no-repeat center center;">

@@ -81,37 +81,6 @@
                     </div>
                 </div>
 
-                <div class="mb-3 row">
-                    <label  class="col-sm-3 text-end control-label col-form-label">{{translate('المدة المتاحة قبل مرحلة الاجراءات السيرة الذاتية')}} <span class="text-danger">*</span></label>
-                    <div class="col-sm-9">
-                        <div class="input-group mb-3">
-                            <input type="hidden" name="types[]" value="reservation_paid_timer">
-                            <input type="text" name="reservation_paid_timer" class="form-control" value="{{ get_setting('reservation_paid_timer') }}" required aria-describedby="basic-addon3">
-                            <span class="input-group-text" id="basic-addon3">{{ translate('ساعات') }}</span>
-                        </div>
-                    </div>
-                </div>
-
-               <div class="mb-3 row">
-                    <label  class="col-sm-3 text-end control-label col-form-label">{{translate('المدة المتاحة قبل مرحلة  السيرة الذاتية')}} <span class="text-danger">*</span></label>
-                    <div class="col-sm-9">
-                    <div class="input-group mb-3">
-                        <input type="hidden" name="types[]" value="reservation_timer">
-                        <input type="text" name="reservation_timer" class="form-control" value="{{ get_setting('reservation_timer') }}" required aria-describedby="basic-addon3">
-                        <span class="input-group-text" id="basic-addon3">{{ translate('ساعات') }}</span>
-                    </div>
-                    </div>
-                </div>
-                <div class="mb-3 row">
-                    <label  class="col-sm-3 text-end control-label col-form-label">{{translate('مدة استقدام العاملة')}} <span class="text-danger">*</span></label>
-                    <div class="col-sm-9">
-                    <div class="input-group mb-3">
-                        <input type="hidden" name="types[]" value="worker_recruitment_timer">
-                        <input type="text"  name="worker_recruitment_timer" class="form-control"  value="{{ get_setting('worker_recruitment_timer') }}" required aria-describedby="basic-addon3">
-                        <span class="input-group-text" id="basic-addon3">{{ translate('ايام') }}</span>
-                    </div>
-                    </div>
-                </div>
 
 
             <div class="p-3 ">

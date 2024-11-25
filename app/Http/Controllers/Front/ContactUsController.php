@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
-use App\Message;
 use App\Models\ContactUs;
 use App\Models\CutactusExport;
 use Auth;
@@ -29,7 +28,7 @@ class  ContactUsController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required',
             'phone' => 'required',
-            'subject' => 'required',
+//            'subject' => 'required',
             'massage' => 'required',
 
         ]);

@@ -91,11 +91,8 @@
                                 #
                             </th>
                             <th>{{translate('اسم العميل')}}</th>
-                            <th>{{translate('الموضوع')}}</th>
                             <th>{{translate('الهاتف')}}</th>
                             <th>{{translate('التاريخ')}}</th>
-                            <th>{{translate('الحاله')}}</th>
-                            <th>{{translate('ملاحظات')}}</th>
                             <th>{{translate('الاجراءات')}}</th>
                             </thead>
                             <tbody>
@@ -119,9 +116,7 @@
         <!-- -------------------------------------------------------------- -->
         <!-- footer -->
         <!-- -------------------------------------------------------------- -->
-        <footer class="footer text-center">
-             {{ translate('جميع الحقوق محفوظة لروافد نجد') }}
-        </footer>
+
         <!-- -------------------------------------------------------------- -->
         <!-- End footer -->
         <!-- -------------------------------------------------------------- -->
@@ -280,11 +275,8 @@
                         "data": 'DT_RowIndex', orderable: false, searchable: false
                     },
                     {data: 'name', name: 'name'},
-                    {data: 'subject', name: 'subject'},
                     {data: 'phone', name: 'phone'},
                     {data: 'created_at', name: 'created_at'},
-                    {data: 'status', name: 'status'},
-                    {data: 'notes', name: 'notes'},
                     {data: 'actions', name: 'actions'},
 
 
@@ -299,7 +291,7 @@
                         title:"قائمة اتصل بنا",
 
                         exportOptions: {
-                            columns: [ 1,2,3,4,5,6]
+                            columns: [ 1,2,3]
                         },
                         autoPrint: true,
 
@@ -324,7 +316,7 @@
                         title:"قائمة اتصل بنا",
 
                         exportOptions: {
-                            columns: [ 1,2,3,4,5,6]
+                            columns: [ 1,2,3]
                         },
                     }
 

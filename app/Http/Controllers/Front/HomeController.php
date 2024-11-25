@@ -4,18 +4,11 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Models\ContactUs;
-use App\Models\Contract;
 use App\Models\Customer;
-use App\Http\Controllers\SearchController;
-use App\Models\CommonTopic;
-use App\Models\Cv;
-use App\Models\CvPreviousSponsor;
-use App\Models\FrequentlyQuestioned;
+
+
 use App\Models\Note;
-use App\Models\Office;
-use App\Models\RecruitmentForm;
-use App\Models\Reservation;
-use App\Models\ReservationSponsor;
+
 use App\Models\Staff;
 use App\Utility\NotificationUtility;
 use Illuminate\Database\Eloquent\Model;

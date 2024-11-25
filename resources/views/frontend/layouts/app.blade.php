@@ -67,6 +67,17 @@
 
     <!-- Template Stylesheet -->
     <link href="{{ static_asset('front_asset/css/style.css')}}" rel="stylesheet">
+
+    <!-- Toastr -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <!-- Styles -->
+<style>
+    .googleMap iframe{
+        width: -webkit-fill-available;
+        height: 300px;
+    }
+</style>
 </head>
 
 <body>
@@ -86,14 +97,25 @@
 
             </a>
             <div class="ms-auto d-flex align-items-center">
-                <small class="ms-4"><i class="fa fa-map-marker-alt me-3"></i>السعودية,  منطقة الباحة,  جدة,  جدة ـ شارع التحلية ـ كونكورد بلازا جدة
+                <small class="ms-4"><i class="fa fa-map-marker-alt me-3"></i>{{translate( get_setting('contact_address')) }}
                 </small>
-                <small class="ms-4"><i class="fa fa-envelope me-3"></i>info@theqqa.com</small>
-                <small class="ms-4"><i class="fa fa-phone-alt me-3"></i>+966123123125</small>
+                <small class="ms-4"><i class="fa fa-envelope me-3"></i>
+                    <a href="{{'mailto:'.get_setting('contact_email')}}">
+                        {{get_setting('contact_email')}}
+                    </a></small>
+                <small class="ms-4"><i class="fa fa-phone-alt me-3"></i><a href="{{ 'tel:'.get_setting('contact_phone_1') }}"> {{ get_setting('contact_phone_1') }} </a></small>
                 <div class="ms-3 d-flex">
-                    <a class="btn btn-sm-square btn-light text-primary rounded-circle ms-2" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-sm-square btn-light text-primary rounded-circle ms-2" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-sm-square btn-light text-primary rounded-circle ms-2" href=""><i class="fab fa-linkedin-in"></i></a>
+                    @if ( get_setting('facebook_link') !=  null )
+                        <a class="btn btn-sm-square btn-light text-primary rounded-circle ms-2" href="{{ get_setting('facebook_link') }}"><i class="fab fa-facebook-f"></i></a>
+
+                    @endif
+                        @if ( get_setting('youtube_link') !=  null )
+                            <a class="btn btn-sm-square btn-light text-primary rounded-circle ms-2" href="{{get_setting('youtube_link')}}}"><i class="fab fa-youtube"></i></a>
+                        @endif
+                        @if ( get_setting('linkedin_link') !=  null )
+                            <a class="btn btn-sm-square btn-light text-primary rounded-circle ms-2" href="{{get_setting('linkedin_link') }}"><i class="fab fa-linkedin-in"></i></a>
+                        @endif
+
                 </div>
             </div>
         </div>
@@ -322,13 +344,14 @@
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                 <p class="fs-5 fw-medium text-primary">تواصل معنا</p>
                 <h1 class="display-5 mb-4"> نحن هنا لنسبق الخيال</h1>
-                <p class="mb-4">نفكّر وننفذ باحترافية ومهنية عالية، نحول أحلامك إلى واقع يبهر الجميع، ونطبق معايير عالمية في خدماتنا التي نقدمها لك.
+                <p class="mb-4">
+                    نفكّر وننفذ باحترافية ومهنية عالية، نحول أحلامك إلى واقع يبهر الجميع، ونطبق معايير عالمية في خدماتنا التي نقدمها لك.
                 </p>
-                <a class="d-inline-flex align-items-center rounded overflow-hidden border border-primary" href="">
+                <a class="d-inline-flex align-items-center rounded overflow-hidden border border-primary" href="{{ 'tel:'.get_setting('contact_phone_1') }}">
                         <span class="btn-lg-square bg-primary" style="width: 55px; height: 55px;">
                             <i class="fa fa-phone-alt text-white"></i>
                         </span>
-                    <span class="fs-5 fw-medium mx-4">+96612121235</span>
+                    <span class="fs-5 fw-medium mx-4">  {{ get_setting('contact_phone_1') }} </span>
                 </a>
             </div>
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
@@ -336,30 +359,26 @@
                 <div class="row g-3">
                     <div class="col-sm-6">
                         <div class="form-floating">
-                            <input type="text" class="form-control" id="name" placeholder="Your Name">
+                            <input type="text" class="form-control" id="contact_name" name="name" placeholder="Your Name">
                             <label for="name">اسمك</label>
                         </div>
                     </div>
+
                     <div class="col-sm-6">
                         <div class="form-floating">
-                            <input type="email" class="form-control" id="mail" placeholder="Your Email">
-                            <label for="mail">البريد الالكترونى</label>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="form-floating">
-                            <input type="text" class="form-control" id="mobile" placeholder="Your Mobile">
+                            <input type="text" class="form-control" name="phone" id="contact_phone" placeholder="Your Mobile">
                             <label for="mobile">الهاتف</label>
                         </div>
                     </div>
+
                     <div class="col-12">
                         <div class="form-floating">
-                            <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 130px"></textarea>
+                            <textarea class="form-control" id="contact_massage" name="massage" rows="5" required></textarea>
                             <label for="message">رسالتك</label>
                         </div>
                     </div>
                     <div class="col-12 text-center">
-                        <button class="btn btn-primary w-100 py-3" type="submit">تواصل الان</button>
+                        <button class="btn btn-primary w-100 py-3 defaultBtn bttn-submit"  type="submit">تواصل الان</button>
                     </div>
                 </div>
             </div>
@@ -456,51 +475,75 @@
         </div>
     </div>
 </div>
+<div  class="container-xxl pt-5">
+    <div class="container">
 <!-- Testimonial End -->
+<section class="googleMap ">
+    {!! get_setting('our_location') !!}
 
+{{--    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d57946.84623396069!2d46.75688!3d24.806481!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc74fdd6f15256594!2z2YXZg9iq2Kgg2LHZiNin2YHYryDZhtis2K8g2YTZhNil2LPYqtmC2K_Yp9mF!5e0!3m2!1sar!2ssa!4v1650724949947!5m2!1sar!2ssa" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"> </iframe>--}}
+</section>
 
+    </div>
+</div>
 <!-- Footer Start -->
 <div class="container-fluid bg-dark footer mt-5 py-5 wow fadeIn" data-wow-delay="0.1s" style="background-image: linear-gradient(4deg, #2A505A, #5f4092), url(../digital-marketing-html-template/img/footerthem.png);">
     <div class="container py-5">
         <div class="row g-5">
             <div class="col-lg-3 col-md-6">
-                <h4 class="text-white mb-4">Our Office</h4>
-                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                <h4 class="text-white mb-4"></h4>
+                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>{{translate( get_setting('contact_address')) }}</p>
+                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i> <a href="{{ 'tel:'.get_setting('contact_by_phone') }}"> {{ get_setting('contact_by_phone') }} </a></p>
+                <p class="mb-2"><i class="fa fa-envelope me-3"></i>    <a href="{{'mailto:'.get_setting('contact_email')}}">
+                        {{get_setting('contact_email')}}
+                    </a></p>
                 <div class="d-flex pt-3">
-                    <a class="btn btn-square btn-light rounded-circle me-2" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-square btn-light rounded-circle me-2" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-square btn-light rounded-circle me-2" href=""><i class="fab fa-youtube"></i></a>
-                    <a class="btn btn-square btn-light rounded-circle me-2" href=""><i class="fab fa-linkedin-in"></i></a>
+                    @if ( get_setting('twitter_link') !=  null )
+                    <a class="btn btn-square btn-light rounded-circle me-2" href="{{ get_setting('twitter_link') }}"><i class="fab fa-twitter"></i></a>
+                    @endif
+                    @if ( get_setting('facebook_link') !=  null )
+                    <a class="btn btn-square btn-light rounded-circle me-2" href="{{ get_setting('facebook_link') }}"><i class="fab fa-facebook-f"></i></a>
+                    @endif
+                        @if ( get_setting('youtube_link') !=  null )
+                    <a class="btn btn-square btn-light rounded-circle me-2" href="{{ get_setting('youtube_link') }}"><i class="fab fa-youtube"></i></a>
+                        @endif
+                        @if ( get_setting('linkedin_link') !=  null )
+                    <a class="btn btn-square btn-light rounded-circle me-2" href="{{get_setting('linkedin_link') }}"><i class="fab fa-linkedin-in"></i></a>
+                        @endif
+                        @if ( get_setting('snap_link') !=  null )
+                            <a class="btn btn-square btn-light rounded-circle me-2" href="{{get_setting('snap_link') }}"><i class="fab fa-snapchat"></i></a>
+                        @endif
+                        @if ( get_setting('tiktok_link') !=  null )
+                            <a class="btn btn-square btn-light rounded-circle me-2" href="  {{ get_setting('tiktok_link')}}"><i class="fab fa-tiktok"></i></a>
+                        @endif
+
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
-                <h4 class="text-white mb-4">Quick Links</h4>
-                <a class="btn btn-link" href="">About Us</a>
-                <a class="btn btn-link" href="">Contact Us</a>
-                <a class="btn btn-link" href="">Our Services</a>
-                <a class="btn btn-link" href="">Terms & Condition</a>
-                <a class="btn btn-link" href="">Support</a>
+                @if ( get_setting('widget_one_labels') !=  null )
+                <h4 class="text-white mb-4">روابط سريعة</h4>
+                    @foreach (json_decode( get_setting('widget_one_labels'), true) as $key => $value)
+                            <a class="btn btn-link" href="{{ json_decode( get_setting('widget_one_links'), true)[$key] }}">
+                                {{ translate($value) }}
+                            </a>
+                    @endforeach
+                @endif
             </div>
-            <div class="col-lg-3 col-md-6">
-                <h4 class="text-white mb-4">Business Hours</h4>
-                <p class="mb-1">Monday - Friday</p>
-                <h6 class="text-light">09:00 am - 07:00 pm</h6>
-                <p class="mb-1">Saturday</p>
-                <h6 class="text-light">09:00 am - 12:00 pm</h6>
-                <p class="mb-1">Sunday</p>
-                <h6 class="text-light">Closed</h6>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <h4 class="text-white mb-4">Newsletter</h4>
-                <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+            <div class="col-lg-6 col-md-12">
+
+                <h4 class="text-white mb-4">اشترك بالنشرة البريدية</h4>
                 <div class="position-relative w-100">
-                    <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                    <button type="button" class="btn btn-light py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+
+                    <form class="form-horizontal  needs-validation" novalidate method="POST" action="{{ route('subscribers.store') }}">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="email" name="email" required placeholder="Your email">
+                    <button type="submit" class="btn btn-light py-2 position-absolute top-0 end-0 mt-2 me-2">اشترك الان</button>
+
+                    </form>
                 </div>
             </div>
         </div>
+
     </div>
 </div>
 <!-- Footer End -->
@@ -521,9 +564,70 @@
 <script src="{{ static_asset('front_asset/lib/waypoints/waypoints.min.js')}}"></script>
 <script src="{{ static_asset('front_asset/lib/owlcarousel/owl.carousel.min.js')}}"></script>
 <script src="{{ static_asset('front_asset/lib/lightbox/js/lightbox.min.js')}}"></script>
-
 <!-- Template Javascript -->
 <script src="{{ static_asset('front_asset/js/main.js')}}"></script>
+<script>
+    $(document).ready(function() {
+        toastr.options = {
+            'closeButton': true,
+            'debug': false,
+            'newestOnTop': false,
+            'progressBar': false,
+            'positionClass': 'toast-top-right',
+            'preventDuplicates': false,
+            'showDuration': '1000',
+            'hideDuration': '1000',
+            'timeOut': '5000',
+            'extendedTimeOut': '1000',
+            'showEasing': 'swing',
+            'hideEasing': 'linear',
+            'showMethod': 'fadeIn',
+            'hideMethod': 'fadeOut',
+        }
+    });
+    $(document).ready(function () {
+        $(".bttn-submit").click(function (e) {
+            e.preventDefault();
+
+            var _token = '{{ @csrf_token() }}';
+            var name = $("#contact_name").val();
+            var email = '';
+            var phone = $("#contact_phone").val();
+            var subject = $("#contact_subject").val();
+            var massage = $("#contact_massage").val();
+            $.ajax({
+                url: "{{route('contact_us_send')}}",
+                type: 'POST',
+                data: {_token: _token, email: email, name: name, phone: phone, massage: massage, subject: subject},
+                success: function (data) {
+                    console.log(data.error)
+                    if ($.isEmptyObject(data.error)) {
+                        $("#contact_name").val('');
+                        $("#contact_phone").val('');
+                        $("#contact_massage").val('');
+                        $('.invalid-feedback').hide();
+                        $("html, body").animate({
+                            scrollTop: 0
+                        }, 1000);
+                        toastr.success(data.success);
+                    } else {
+                        printErrorMsg(data.error);
+
+                    }
+                }
+            });
+        });
+
+        function printErrorMsg(msg) {
+            $('.invalid-feedback').show();
+            $.each(msg, function (key, value) {
+                console.log(key);
+                $('.' + key + '_err').text(value);
+            });
+        }
+    });
+
+</script>
 </body>
 
 </html>
