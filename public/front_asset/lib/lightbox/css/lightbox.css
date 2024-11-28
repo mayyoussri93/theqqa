@@ -45,7 +45,7 @@ html.lb-disable-scrolling {
 .lb-outerContainer {
   position: relative;
   *zoom: 1;
-  width: 250px;
+  width: 400;
   height: 250px;
   margin: 0 auto;
   border-radius: 4px;
@@ -72,7 +72,7 @@ html.lb-disable-scrolling {
 }
 
 .lb-cancel {
-  display: block;
+  display: none;
   width: 32px;
   height: 32px;
   margin: 0 auto;

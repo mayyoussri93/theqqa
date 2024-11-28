@@ -82,9 +82,9 @@
 
 <body>
 <!-- Spinner Start -->
-{{--<div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">--}}
-{{--    <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>--}}
-{{--</div>--}}
+<div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+  <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+</div>
 <!-- Spinner End -->
 
 
@@ -93,17 +93,18 @@
     <div class="container py-3">
         <div class="d-flex align-items-center">
             <a href="/">
-                <img class="w-100" src="{{uploaded_asset(get_setting('header_logo'))}}" height="40px" alt="Image">
+                               <img class="w-100" src="{{uploaded_asset(get_setting('header_logo'))}}" height="40px" alt="Image">
+
 
             </a>
             <div class="ms-auto d-flex align-items-center">
                 <small class="ms-4"><i class="fa fa-map-marker-alt me-3"></i>{{translate( get_setting('contact_address')) }}
                 </small>
                 <small class="ms-4"><i class="fa fa-envelope me-3"></i>
-                    <a href="{{'mailto:'.get_setting('contact_email')}}">
+                    <a href="{{'mailto:'.get_setting('contact_email')}}" style="color:white;">
                         {{get_setting('contact_email')}}
                     </a></small>
-                <small class="ms-4"><i class="fa fa-phone-alt me-3"></i><a href="{{ 'tel:'.get_setting('contact_phone_1') }}"> {{ get_setting('contact_phone_1') }} </a></small>
+                <small class="ms-4"><i class="fa fa-phone-alt me-3"></i><a style="color:white;" href="{{ 'tel:'.get_setting('contact_phone_1') }}"> {{ get_setting('contact_phone_1') }} </a></small>
                 <div class="ms-3 d-flex">
                     @if ( get_setting('facebook_link') !=  null )
                         <a class="btn btn-sm-square btn-light text-primary rounded-circle ms-2" href="{{ get_setting('facebook_link') }}"><i class="fab fa-facebook-f"></i></a>
@@ -129,7 +130,7 @@
     <div class="container">
         <nav class="navbar navbar-expand-lg bg-white navbar-light p-lg-0">
             <a href="/" class="navbar-brand d-lg-none">
-                <h1 class="fw-bold m-0">GrowMark</h1>
+                 <img class="w-100" src="{{static_asset('front_asset/img/logo_mob.png')}}" height="40px" alt="Image">
             </a>
             <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
@@ -160,19 +161,19 @@
 <div id="section1" class="container-fluid px-0 mb-5">
     <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-inner">
-
+<?php  $slider_images = json_decode(get_setting('home_slider_images')); ?>
             @if (get_setting('home_slider_images') != null)
                 @foreach ($slider_images as $key => $value)
 
 
 
-                    <div class="carousel-item active">
+                    <div class="carousel-item @if($key==0)active @endif">
                         <img class="w-100" src="{{ uploaded_asset($slider_images[$key])}}" alt="Image">
                         <div class="carousel-caption">
                             <div class="container">
                                 <div class="row justify-content-start">
                                     <div class="col-lg-7 text-start">
-                                        <p class="fs-4 text-white animated slideInRight">{{ translate(json_decode(get_setting('home_slider_title_1'), true)[$key]) }}</p>
+                                        <p class="fs-4 text-white animated slideInRight">{!! translate(json_decode(get_setting('home_slider_title_1'), true)[$key]) !!}</p>
                                         <h1 class="display-1 text-white mb-4 animated slideInRight">
                                             {{ translate(json_decode(get_setting('home_slider_title_2'), true)[$key]) }}
                                         </h1>
@@ -213,15 +214,15 @@
 <div id="section2" class="container-xxl about my-5" style="background: {{uploaded_asset(get_setting('home_who_images'))}} !important">
     <div class="container">
         <div class="row g-0">
-            <div class="col-lg-6">
-                <div class="h-100 d-flex align-items-center justify-content-center" style="min-height: 300px;">
-                    <button type="button" class="btn-play" data-bs-toggle="modal"
-                            data-src="{{get_setting('home_who_video_link')}}" data-bs-target="#videoModal">
-                        <span></span>
-                    </button>
-                </div>
-            </div>
-            <div class="col-lg-6 pt-lg-5 wow fadeIn" data-wow-delay="0.5s">
+            <!--<div class="col-lg-6">-->
+            <!--    <div class="h-100 d-flex align-items-center justify-content-center" style="min-height: 300px;">-->
+            <!--        <button type="button" class="btn-play" data-bs-toggle="modal"-->
+            <!--                data-src="{{get_setting('home_who_video_link')}}" data-bs-target="#videoModal">-->
+            <!--            <span></span>-->
+            <!--        </button>-->
+            <!--    </div>-->
+            <!--</div>-->
+            <div class="col-lg-8 pt-lg-5 wow fadeIn" data-wow-delay="0.5s">
                 <div class="bg-white rounded-top p-5 mt-lg-5">
                     <p class="fs-5 fw-medium text-primary">{{ get_setting('home_who_title1') }}</p>
                     <h1 class="display-6 mb-4">
@@ -241,23 +242,23 @@
 
 
 <!-- Video Modal Start -->
-<div class="modal modal-video fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content rounded-0">
-            <div class="modal-header">
-                <h3 class="modal-title" id="exampleModalLabel">Youtube Video</h3>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
+<!--<div class="modal modal-video fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
+<!--    <div class="modal-dialog">-->
+<!--        <div class="modal-content rounded-0">-->
+<!--            <div class="modal-header">-->
+<!--                <h3 class="modal-title" id="exampleModalLabel">Youtube Video</h3>-->
+<!--                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+<!--            </div>-->
+<!--            <div class="modal-body">-->
                 <!-- 16:9 aspect ratio -->
-                <div class="ratio ratio-16x9">
-                    <iframe class="embed-responsive-item" src="" id="video" allowfullscreen allowscriptaccess="always"
-                            allow="autoplay"></iframe>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+                <!--<div class="ratio ratio-16x9">-->
+                <!--    <iframe class="embed-responsive-item" src="" id="video" allowfullscreen allowscriptaccess="always"-->
+                <!--            allow="autoplay"></iframe>-->
+                <!--</div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 <!-- Video Modal End -->
 
 
@@ -284,7 +285,13 @@
                                 <p class="mb-0">
                                     {{translate( $value->description)}}
                                 </p>
+                                
+                                
+                                
+                                
+                                
                             </div>
+                            
 {{--                            <div class="service-btn rounded-0 rounded-bottom">--}}
 {{--                                <a class="text-primary fw-medium" href="">Read More<i class="bi bi-chevron-double-right ms-2"></i></a>--}}
 {{--                            </div>--}}
@@ -313,9 +320,14 @@
                 @foreach (json_decode(get_setting('home_banner1_images'), true) as $key => $value)
                     <div class="project-item mb-5">
                         <div class="position-relative">
-                            <img class="img-fluid" src="{{uploaded_asset($value)}}" alt="">
+                            <!--<img class="img-fluid" src="{{uploaded_asset($value)}}" alt="">-->
+                 <video width="640" height="360"  muted autoplay displaysinline loop>
+    <source src="{{$value}}" type="video/mp4">
+    متصفحك لا يدعم تشغيل الفيديو.
+</video>           
+                                       
                             <div class="project-overlay">
-                                <a class="btn btn-lg-square btn-light rounded-circle m-1" href="{{uploaded_asset($value)}}" data-lightbox="project"><i class="fa fa-eye"></i></a>
+                                <a class="btn btn-lg-square btn-light rounded-circle m-1 view_video" href="{{$value}}" data-lightbox="project"><i class="fa fa-eye"></i></a>
                                 <a class="btn btn-lg-square btn-light rounded-circle m-1" href="/"><i class="fa fa-link"></i></a>
                             </div>
                         </div>
@@ -466,6 +478,7 @@
                 @foreach (json_decode(get_setting('home_our_client_images'), true) as $key => $value)
             <div class="testimonial-item rounded p-4 p-lg-5 mb-5">
                 <img class="mb-4" src="{{uploaded_asset(json_decode(get_setting('home_our_client_images'), true)[$key]) }}" alt="">
+                   
                 <p class="mb-4">{{ json_decode(get_setting('home_our_client_dec'), true)[$key] }}</p>
                 <span class="text-primary">{{ json_decode(get_setting('home_our_client_title'), true)[$key] }}</span>
             </div>
@@ -487,14 +500,14 @@
     </div>
 </div>
 <!-- Footer Start -->
-<div class="container-fluid bg-dark footer mt-5 py-5 wow fadeIn" data-wow-delay="0.1s" style="background-image: linear-gradient(4deg, #2A505A, #5f4092), url(../digital-marketing-html-template/img/footerthem.png);">
+<div class="container-fluid bg-dark footer mt-5 py-5 wow fadeIn" data-wow-delay="0.1s" style="background-image: linear-gradient(4deg, #2A505A, #2A505A), url(../digital-marketing-html-template/img/footerthem.png);">
     <div class="container py-5">
         <div class="row g-5">
             <div class="col-lg-3 col-md-6">
                 <h4 class="text-white mb-4"></h4>
                 <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>{{translate( get_setting('contact_address')) }}</p>
-                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i> <a href="{{ 'tel:'.get_setting('contact_by_phone') }}"> {{ get_setting('contact_by_phone') }} </a></p>
-                <p class="mb-2"><i class="fa fa-envelope me-3"></i>    <a href="{{'mailto:'.get_setting('contact_email')}}">
+                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i> <a style="color:#B0B9AE;" href="{{ 'tel:'.get_setting('contact_by_phone') }}"> {{ get_setting('contact_by_phone') }} </a></p>
+                <p class="mb-2"><i class="fa fa-envelope me-3"></i>    <a style="color:#B0B9AE;" href="{{'mailto:'.get_setting('contact_email')}}">
                         {{get_setting('contact_email')}}
                     </a></p>
                 <div class="d-flex pt-3">
@@ -514,7 +527,7 @@
                             <a class="btn btn-square btn-light rounded-circle me-2" href="{{get_setting('snap_link') }}"><i class="fab fa-snapchat"></i></a>
                         @endif
                         @if ( get_setting('tiktok_link') !=  null )
-                            <a class="btn btn-square btn-light rounded-circle me-2" href="  {{ get_setting('tiktok_link')}}"><i class="fab fa-tiktok"></i></a>
+                            <!--<a class="btn btn-square btn-light rounded-circle me-2" href="  {{ get_setting('tiktok_link')}}"><i class="fab fa-tiktok"></i></a>-->
                         @endif
 
                 </div>
@@ -563,7 +576,7 @@
 <script src="{{ static_asset('front_asset/lib/easing/easing.min.js')}}"></script>
 <script src="{{ static_asset('front_asset/lib/waypoints/waypoints.min.js')}}"></script>
 <script src="{{ static_asset('front_asset/lib/owlcarousel/owl.carousel.min.js')}}"></script>
-<script src="{{ static_asset('front_asset/lib/lightbox/js/lightbox.min.js')}}"></script>
+<!--<script src="{{ static_asset('front_asset/lib/lightbox/js/lightbox.min.js')}}"></script>-->
 <!-- Template Javascript -->
 <script src="{{ static_asset('front_asset/js/main.js')}}"></script>
 <script>
@@ -586,6 +599,17 @@
         }
     });
     $(document).ready(function () {
+        $(window).load(function(){
+   // PAGE IS FULLY LOADED  
+   // FADE OUT YOUR OVERLAYING DIV
+   $('#spinner').fadeOut();
+});
+        //   $(".view_video").click(function (e) {
+        //       $('#active_live_video').remove();
+        //      $url = $(this).attr('href');
+        //      $('.lb-image').after('<video src="' + $url + '"id="active_live_video"  style="display: block;height: 100%;position: absolute;width: 100%;"controls><source  class="lb-image" type="video/mp4"></video>');
+        //   $('.lb-loader').remove();
+        //   })
         $(".bttn-submit").click(function (e) {
             e.preventDefault();
 

@@ -503,10 +503,10 @@
     color: #FFFFFF !important;
 }
 
-.testimonial-item img {
-    width: 100px !important;
-    height: 100px !important;
-    border-radius: 100px;
+.testimonial-item div {
+    /*width: 100px !important;*/
+    /*height: 100px !important;*/
+    /*border-radius: 100px;*/
 }
 
 .testimonial-carousel .owl-nav {

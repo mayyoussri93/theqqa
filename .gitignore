@@ -6,7 +6,7 @@
 /test
 /storage/debugbar
 /storage
-
+/public/client_video
 /public/storage
 /public/uploads
 #/storage/*.key

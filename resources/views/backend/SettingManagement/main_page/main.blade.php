@@ -358,18 +358,10 @@
                                                         @foreach (json_decode(get_setting('home_banner1_images'), true) as $key => $value)
                                                             <div class="row gutters-5">
                                                                 <div class="col-sm-4">
-                                                                    <label for="validationCustomUsername">{{translate('الصورة')}}</label>
 
-                                                                    <div class="form-group">
-                                                                        <div class="input-group" data-toggle="aizuploader" data-type="image">
-                                                                            <div class="input-group-prepend">
-                                                                                <div class="input-group-text bg-soft-secondary font-weight-medium">{{translate('تصفح')}}</div>
-                                                                            </div>
-                                                                            <div class="form-control file-amount">{{translate('اختار الملف')}}</div>
-                                                                            <input type="hidden" name="home_banner1_images[]" class="selected-files" value="{{ json_decode(get_setting('home_banner1_images'), true)[$key] }}">
-                                                                        </div>
-                                                                        <div class="file-preview box sm">
-                                                                        </div>
+                                                                      <div class="form-group">
+                                                                        <label for="validationCustomUsername">{{translate('رابط الفديو')}}</label>
+                                                                        <input type="text" class="form-control" placeholder="{{translate('Title 1')}}" name="home_banner1_images[]" value="{{ json_decode(get_setting('home_banner1_images'), true)[$key] }}" >
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-sm-2">
@@ -408,17 +400,9 @@
 							<div class="row gutters-5">
 								<div class="col-sm-4">
 									<div class="form-group">
-									<label for="validationCustomUsername">{{translate('الصورة')}}</label>
 
-										<div class="input-group" data-toggle="aizuploader" data-type="image">
-											<div class="input-group-prepend">
-												<div class="input-group-text bg-soft-secondary font-weight-medium">{{translate('تصفح')}}</div>
-											</div>
-											<div class="form-control file-amount">{{translate('اختار الملف')}}</div>
-											<input type="hidden" name="home_banner1_images[]" class="selected-files">
-										</div>
-										<div class="file-preview box sm">
-										</div>
+    <label for="validationCustomUsername">{{translate('رابط الفديو')}}</label>
+                                                                        <input type="text" class="form-control" placeholder="{{translate('Title 1')}}" name="home_banner1_images[]" >
 									</div>
 								</div>
 									<div class="col-sm-2">
